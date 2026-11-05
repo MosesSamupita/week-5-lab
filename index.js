@@ -166,6 +166,15 @@ app.get('/persons', async (req, res) => {
    
 });
 
+app.post('/insertMany', async (req, res) => {
+
+    try {
+        const result = await insertMany();
+        res.status(201).json({ status: true, data: result });
+    } catch (err) {
+        res.status(500).json({ status: false, message: err.message });
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

@@ -49,6 +49,7 @@ async function insertMany() {
 
     console.log('Many documents inserted');
     console.log(result);
+    return result;
 }
 
 // Find all documents
